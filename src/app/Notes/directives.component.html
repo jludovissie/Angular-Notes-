@@ -1,0 +1,36 @@
+<li>
+  Attribute Directives - Change the behaviour or appearance of elements 
+</li>
+<li>
+  Structural Directives - Change the DOM layout.  NgIf, NgFor & NgSwitch 
+</li> 
+<li> 
+  Services - place code so multiple other components can use it.  
+</li> 
+<li>
+  Dependency Injection - class uses code from another class or service insted of writing it locally 
+</li>
+
+  
+<h1 basicBorder> Practice with Directives </h1>
+
+<li 
+*ngFor = "let family of ludovissieFamily" >
+    {{ family }}
+</li> 
+
+<p *ngIf = "love" [ngClass]="{ family: love }" >
+  They Cool w/ Each other 
+</p>   
+
+<button clickDirective (click)= "addPet()"> Click Here</button>
+
+<h2> Number of Pets </h2>
+<div [ngSwitch] = "numberOfPets">
+  <p *ngSwitchCase = "2"> We have two Pets</p>
+  <p *ngSwitchCase = "3"> We have three Pets</p>
+  <p *ngSwitchCase = "4"> We have four Pets </p>
+  <p> We have {{ numberOfPets }} </p>
+</div>    
+
+<button (click)="clearPet()">Clear Pets </button>
